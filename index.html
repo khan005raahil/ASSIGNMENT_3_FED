@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="game-container">
+    <div id="game-container" role="region" aria-live="polite">
         <h1>Adventure Game</h1>
         <div id="question-container">
-            <p id="question">Your adventure begins now...</p>
+            <p id="question" tabindex="0">Your adventure begins now...</p>
         </div>
         <ul id="answers"></ul>
     </div>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
