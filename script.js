@@ -45,7 +45,7 @@ function renderQuestion() {
     const answersContainer = document.getElementById("answers");
 
     questionContainer.textContent = story[currentState].text;
-    answersContainer.innerHTML = "";
+    answersContainer.innerHTML = ""; // Clear previous choices
 
     story[currentState].choices.forEach((choice, index) => {
         const button = document.createElement("button");
