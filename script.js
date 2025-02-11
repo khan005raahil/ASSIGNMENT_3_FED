@@ -45,17 +45,20 @@ function renderQuestion() {
     const answersContainer = document.getElementById("answers");
 
     questionContainer.textContent = story[currentState].text;
-    answersContainer.innerHTML = "";
+    answersContainer.innerHTML = ""; // Clear previous choices
 
-    story[currentState].choices.forEach(choice => {
+    story[currentState].choices.forEach((choice, index) => {
         const button = document.createElement("button");
         button.textContent = choice.text;
         button.onclick = () => {
             currentState = choice.next;
             renderQuestion();
         };
+        button.setAttribute("aria-label", `Option ${index + 1}: ${choice.text}`);
+        button.setAttribute("tabindex", "0");
         answersContainer.appendChild(button);
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", renderQuestion);
